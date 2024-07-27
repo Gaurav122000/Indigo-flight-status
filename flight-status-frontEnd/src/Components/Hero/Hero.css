@@ -23,12 +23,16 @@
     cursor: pointer;
 }
 
-.hero-explore p{
+.hero-p{
     color: #292929;
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 0rem;
+    text-decoration: none;
+    
 }
+
+.hero-p:hover{color: #000099;}
 
 .hero-dot-play{
     margin-top: 120px;

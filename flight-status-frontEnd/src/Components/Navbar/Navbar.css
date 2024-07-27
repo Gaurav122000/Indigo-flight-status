@@ -21,8 +21,20 @@
 }
 
 .nav-contact{
+    text-decoration: none;
     border-radius: 50px;
     padding: 10px 38px;
     background: #fff;
     color: #262626;
+}
+
+.link-sty{
+    text-decoration: none;
+    color: #FFF; /* Match the color with the logo */
+    font-family: Outfit; /* Match the font with the logo */
+    font-size: 18px; /* Match the font size with the menu items */
+}
+
+.nav-menu a:hover {
+    color: #000099; /* Optional: Slightly darker color on hover */
 }

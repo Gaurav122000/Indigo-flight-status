@@ -11,8 +11,8 @@ const Hero = ({heroData, setHeroCount, heroCount, setPlayStatus, playStatus}) =>
                 <p>{heroData.text2}</p>
             </div>
             <div className='hero-explore'>
-                <p>Check Flight Status</p>
-                <Link to='/Status'>
+                <Link to='/Status' className='hero-p'>
+                Check Flight Status &nbsp;
                 <FontAwesomeIcon icon={faArrowRight} fade size="2xl" style={{color: "#000099",}} />
                 </Link>
             </div>
