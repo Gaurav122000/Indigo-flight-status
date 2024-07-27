@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #f0f0f0; /* Light background for contrast */
+    margin: 0;
+}
+
+.Sta-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px; /* Adjust as needed */
+    width: 100%;
+    max-width: 500px;
+}
+
+.Sta-form .form-floating {
+    margin-bottom: 15px;
+}
+
+.Sta-form .form-floating label {
+    color: #333;
+}
+
+.Sta-form .form-floating input,
+.Sta-form .form-floating .react-datepicker-wrapper {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.Sta-form .form-floating input:focus,
+.Sta-form .form-floating .react-datepicker-wrapper:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.Sta-form .form-floating .form-control-feedback {
+    color: #d9534f;
+}
+
+.Sta-form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.Sta-form button:hover {
+    background-color: #0056b3;
+}
