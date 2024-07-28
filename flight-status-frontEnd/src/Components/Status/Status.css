@@ -4,7 +4,6 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0; /* Light background for contrast */
     margin: 0;
     background-image: url('../../assets/image1.jpg'); /* Ensure the correct path */
     background-size: cover;
@@ -18,19 +17,26 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 50px; /* Adjust as needed */
     width: 100%;
-    max-width: 500px;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.Sta-form .form-floating {
-    margin-bottom: 15px;
+.form-main {
+    width: 100%;
+    
+}
+
+.Sta-form .form-floating{
+    margin-bottom: 1rem;
 }
 
 .Sta-form .form-floating label {
     color: #333;
 }
 
-.Sta-form .form-floating input,
-.Sta-form .form-floating .react-datepicker-wrapper {
+.Sta-form .form-floating input{
     background-color: transparent;
     border: 1px solid #ccc;
     padding: 10px;
@@ -38,8 +44,7 @@
     width: 100%;
 }
 
-.Sta-form .form-floating input:focus,
-.Sta-form .form-floating .react-datepicker-wrapper:focus {
+.Sta-form .form-floating input:focus {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }

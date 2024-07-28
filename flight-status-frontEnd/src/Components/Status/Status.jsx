@@ -24,11 +24,12 @@ const Status = () => {
     };
 
     return (
+        <>
+        <Navbar />
         <div className='status-body'>
-            <Navbar />
             <img src={image1} className='background fade-in' alt='' />
             <div className='Sta-form'>
-                <Form onSubmit={handleSubmit}>
+                <Form className='form-main' onSubmit={handleSubmit}>
                     <Form.Floating>
                         <Form.Control
                             id="flightNumber"
@@ -52,6 +53,7 @@ const Status = () => {
                 )}
             </div>
         </div>
+        </>
     );
     
 };

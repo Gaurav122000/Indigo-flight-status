@@ -1,32 +1,44 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import './FlightCard.css';
 
 const FlightCard = ({ flight }) => {
-    const options = { timeZone: 'Asia/Kolkata', timeZoneName: 'short' };
-    //const departureTime = new Date(flight.departure.actual).toLocaleString('en-US', options);
-    //const arrivalTime = new Date(flight.arrival.actual).toLocaleString('en-US', options);
-    const flightDate = new Date(flight.flight_date).toLocaleDateString('en-US', options);
-
     return (
-        <Card className="flight-card">
-            <Card.Body>
-                <Card.Title>{flight.departure.airport} to {flight.arrival.airport}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">Flight Status: {flight.flight_status}</Card.Subtitle>
-                <Card.Text>
-                    <strong>Flight Date:</strong> {flightDate}<br />
-                    <strong>Departure Actual:</strong> {flight.departure.actual}<br />
-                    <strong>Departure Terminal:</strong> {flight.departure.terminal} &nbsp; <strong>Departure Gate:</strong> {flight.departure.gate}<br />
-                    <strong>Arrival:</strong> {flight.arrival.actual}<br />
-                    <strong>Arrival Terminal:</strong> {flight.arrival.terminal} &nbsp; <strong>Arrival Gate:</strong> {flight.arrival.gate}<br />
+        <div className="flight-card">
+            <div className='heading'>
+                <span>{flight.departure.airport}</span> &nbsp; <FontAwesomeIcon icon={faArrowRightLong} size="2xl" style={{color: "#0ce91b",}} /> &nbsp; <span>{flight.arrival.airport}</span>
+            </div>
+            <div className='status'>
+                <strong >Flight Status: </strong> {flight.flight_status}
+            </div>
+            <div className="flight-details">
+                <div className="departure">
+                    <h3>Departure</h3>
+                    <strong>Airport: </strong> {flight.departure.airport}<br/>
+                    <strong>Scheduled Departure: </strong> {flight.departure.scheduled}<br />
+                    <strong>Actual Departure: </strong> {flight.departure.actual}<br />
+                    <strong>Terminal: </strong> {flight.departure.terminal}<br/>
+                    <strong>Gate:</strong> {flight.departure.gate}<br />
                     <strong>Delay in departure: </strong> 
                     <span style={{ color: 'red', fontWeight: 'bold' }}>
                         {flight.departure.delay}
-                    </span><span> Min</span><br/>
-                    <strong>Airline:</strong> {flight.airline.name}<br />
-                    <strong>Flight Number:</strong> {flight.flight.iata}
-                </Card.Text>
-            </Card.Body>
-        </Card>
+                    </span><span> Min</span>
+                </div>
+                <div className="arrival">
+                    <h3>Arrival</h3>
+                    <strong>Airport: </strong> {flight.arrival.airport}<br/>
+                    <strong>Scheduled Arrival: </strong> {flight.arrival.scheduled}<br />
+                    <strong>Actual Arrival:</strong> {flight.arrival.actual}<br />
+                    <strong>Arrival Terminal:</strong> {flight.arrival.terminal}<br/>
+                    <strong>Arrival Gate:</strong> {flight.arrival.gate}<br />
+                    <strong>Delay in arrival: </strong>
+                    <span style={{ color: 'red', fontWeight: 'bold' }}>
+                        {flight.arrival.delay}
+                    </span><span> Min</span>
+                </div>
+            </div>
+        </div>
     );
 };
 
