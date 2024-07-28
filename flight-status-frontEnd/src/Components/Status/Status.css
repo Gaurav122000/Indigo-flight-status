@@ -1,10 +1,14 @@
-body {
+/* Scoped styles for Status component */
+.status-body {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     height: 100vh;
     background-color: #f0f0f0; /* Light background for contrast */
     margin: 0;
+    background-image: url('../../assets/image1.jpg'); /* Ensure the correct path */
+    background-size: cover;
+    background-position: center;
 }
 
 .Sta-form {
@@ -49,12 +53,12 @@ body {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #000099;
     color: white;
     font-size: 16px;
     cursor: pointer;
 }
 
 .Sta-form button:hover {
-    background-color: #0056b3;
+    background-color: #007bff;
 }

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-//import './Status.css';
 import Navbar from "../Navbar/Navbar.jsx";
 import image1 from '../../assets/image1.jpg';
+import "./Status.css"
 import axios from 'axios';
+import FlightCard from '../FlightCard/FlightCard.jsx';
 
 const Status = () => {
     const [flightNumber, setFlightNumber] = useState('');
@@ -14,7 +15,8 @@ const Status = () => {
         e.preventDefault();
         axios.post('http://localhost:3200/track-flight', { flightNumber })
             .then(response => {
-                setFlightStatus(response.data);
+                setFlightStatus(response.data.data[0]);
+                console.log(response);
             })
             .catch(error => {
                 console.error('There was an error!', error);
@@ -22,7 +24,7 @@ const Status = () => {
     };
 
     return (
-        <div className='sta-out'>
+        <div className='status-body'>
             <Navbar />
             <img src={image1} className='background fade-in' alt='' />
             <div className='Sta-form'>
@@ -42,18 +44,16 @@ const Status = () => {
                             Please provide a valid flight number.
                         </Form.Control.Feedback>
                     </Form.Floating>
-
+    
                     <Button variant="primary" type="submit">Track Flight</Button>
                 </Form>
                 {flightStatus && (
-                    <div className="flight-status">
-                        <h3>Flight Status</h3>
-                        <p>{JSON.stringify(flightStatus, null, 2)}</p>
-                    </div>
+                    <FlightCard flight={flightStatus} />
                 )}
             </div>
         </div>
     );
+    
 };
 
 export default Status;
