@@ -1,10 +1,4 @@
-/* Scoped styles for Status component */
-/* In your global CSS (e.g., index.css or App.css) */
-/* html, body {
-    overflow: hidden;
-} */
-
-.status-body {
+.noti-body{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,10 +7,9 @@
     background-image: url('../../assets/image1.jpg'); /* Ensure the correct path */
     background-size: cover;
     background-position: center;
-    /* overflow-x: hidden; */
 }
 
-.Sta-form {
+.noti-form-h3 {
     background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
     padding: 20px;
     border-radius: 10px;
@@ -29,37 +22,49 @@
     align-items: center;
 }
 
-.form-main {
+.noti-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px; /* Adjust as needed */
     width: 100%;
-    
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.Sta-form .form-floating{
+.noti-form-main{
+    width: 100%;
+}
+
+.noti-form .form-floating{
     margin-bottom: 1rem;
 }
 
-.Sta-form .form-floating label {
+.noti-form .form-floating label{
     color: #333;
 }
 
-.Sta-form .form-floating input{
+.noti-form .form-floating input{
     background-color: transparent;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     padding: 10px;
     border-radius: 5px;
     width: 100%;
 }
 
-.Sta-form .form-floating input:focus {
+.noti-form .form-floating input:focus {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-.Sta-form .form-floating .form-control-feedback {
+.noti-form .form-floating .form-control-feedback {
     color: #d9534f;
 }
 
-.Sta-form button {
+.noti-form button {
     width: 100%;
     padding: 10px;
     border: none;
@@ -70,6 +75,6 @@
     cursor: pointer;
 }
 
-.Sta-form button:hover {
+.noti-form button:hover {
     background-color: #007bff;
 }

@@ -26,8 +26,8 @@ const Status = () => {
     return (
         <>
         <Navbar />
+        <img src={image1} className='background fade-in' alt='' />
         <div className='status-body'>
-            <img src={image1} className='background fade-in' alt='' />
             <div className='Sta-form'>
                 <Form className='form-main' onSubmit={handleSubmit}>
                     <Form.Floating>

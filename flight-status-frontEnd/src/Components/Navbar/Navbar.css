@@ -2,22 +2,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 120px;
+    margin: 1rem 7rem;
     color: white;
 }
 
 .nav-logo{
     font-family: Outfit;
-    font-size: 35px;
-    font-weight: 500;
+    margin-top: -1rem;
+    font-size: 2rem;
+    font-weight: 400;
 }
 
 .nav-menu{
     display: flex;
     align-items: center;
     list-style: none;
-    font-size: 18px;
-    gap: 90px;
+    font-size: 1remx;
+    gap: 7rem;
 }
 
 .nav-contact{
@@ -32,7 +33,7 @@
     text-decoration: none;
     color: #FFF; /* Match the color with the logo */
     font-family: Outfit; /* Match the font with the logo */
-    font-size: 18px; /* Match the font size with the menu items */
+    font-size: 1rem; /* Match the font size with the menu items */
 }
 
 .nav-menu a:hover {
