@@ -2,8 +2,8 @@ import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 import generateThankYouEmail from '../../views/notification.confirm.templates.js';
 
-export default async function sendMail({name, email, flight}){
-
+export default async function sendMail({name, email, flightNumber}, flightData){
+    //console.log("flight", flightData);
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -16,7 +16,7 @@ export default async function sendMail({name, email, flight}){
         from:'Gaurav@flightconpanion.co',
         to: email,
         subject: `You are Onboard ${name}, I'm your companion for this journey`,
-        html: generateThankYouEmail(name),
+        html: generateThankYouEmail(name, flightNumber, flightData),
     };
 
     try{

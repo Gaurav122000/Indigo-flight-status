@@ -14,7 +14,7 @@ const notificationSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    flight:{
+    flightNumber:{
         type:String,
         required:true,
     }

@@ -1,4 +1,6 @@
 import axios from 'axios';
+import notificationModel from '../../models/notification.model.js';
+import sendMail from '../EmailControllers/notification.confirm.controller.js'
 
 // Configuration
 const apiKey = '78c06db5c4405697c9b97ec7e8da7de3';
@@ -23,7 +25,7 @@ export const trackFlight = async (req, res) => {
     try {
         const flightData = await getFlightDetailsByNumber(flightNumber);
         res.json(flightData);
-        console.log(flightData);
+        console.log('flight status from trackFlight: ', flightData);
     } catch (error) {
         res.status(500).send('Error retrieving flight data');
     }
@@ -31,3 +33,26 @@ export const trackFlight = async (req, res) => {
 //----------------------------------------------------------------------------------------------------------------
 
 // updated notificationSave function
+export const notificationSave = async (req, res) => {
+    const Datafront = req.body;
+    // console.log('fk',Datafront);
+
+    try{
+        // Crete the notification document in MongoDB
+        const notification = await notificationModel.create(Datafront);
+        console.log('Notification created: ', notification);
+
+        // Fetch flight details using the flight number
+        const flightData = await getFlightDetailsByNumber(Datafront.flightNumber); // Use Datafront.flightNumber
+
+        // Send email with flight details
+        sendMail(notification, flightData);
+
+        // Respond with the notification and flight data
+        res.json(notification);
+
+    }catch(err){
+        console.error('Error creating notification or retrieving flight data:', err);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+}

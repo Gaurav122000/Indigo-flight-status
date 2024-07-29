@@ -1,4 +1,5 @@
-const generateThankYouEmail = (name) => `
+const generateThankYouEmail = (name, flightNumber, flightData) => 
+    `
     <!DOCTYPE html>
     <html>
     <head>
@@ -65,6 +66,7 @@ const generateThankYouEmail = (name) => `
                 <h1>Hello ${name.toUpperCase()},</h1>
             </div>
             <div class="content">
+                    <h1 style="text-align: center;">Your flight (${flightNumber}) status is = ${flightData.data[0].flight_status}</h1>
                     <p style="text-align: center;">Thank for choosing us, This is a confirmation mail that we got your flight information and we will keep you posted about your flight status.</p>
                     <p style="text-align: center;">Thank you, have a safe journey</p>
             </div>

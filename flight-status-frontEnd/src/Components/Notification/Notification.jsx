@@ -11,7 +11,7 @@ const Notification = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
-  const [flight, setflight] = useState();
+  const [flightNumber, setflight] = useState();
 
   //validator
   const validateEmail = (email) => {
@@ -38,7 +38,7 @@ const Notification = () => {
         name,
         email,
         phone,
-        flight,
+        flightNumber,
       };
   
       try {
@@ -122,16 +122,16 @@ const Notification = () => {
 
             <Form.Floating>
               <Form.Control
-                id="flight"
-                type="number"
+                id="flightNumber"
+                type="text"
                 placeholder=""
                 size="lg"
-                name="flight"
+                name="flightNumber"
                 onChange={(e) => setflight(e.target.value)}
                 required
                 // isValid={phone && validatePhoneNumber(phone)}
               />
-              <label htmlFor="flight">Flight Number</label>
+              <label htmlFor="flightNumber">Flight Number</label>
               {/* <Form.Control.Feedback type="invalid">
                 Please provide a valid mobile number.
               </Form.Control.Feedback> */}

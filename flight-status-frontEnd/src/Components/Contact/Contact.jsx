@@ -1,5 +1,5 @@
 import React from 'react';
-//import './Contact.css';
+import './Contact.css';
 import Navbar from "../Navbar/Navbar.jsx";
 import image1 from '../../assets/image4.jpg';
 
