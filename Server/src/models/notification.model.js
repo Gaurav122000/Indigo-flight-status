@@ -6,12 +6,11 @@ const notificationSchema = new mongoose.Schema({
         required:true
     },
     email:{
-        type:String,
-        required:true,
+        type: String,
+        required: true
     },
     phone:{
         type:String,
-        required:true,
     },
     flightNumber:{
         type:String,

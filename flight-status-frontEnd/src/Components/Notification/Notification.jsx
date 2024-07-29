@@ -12,6 +12,7 @@ const Notification = () => {
   const [email, setEmail] = useState();
   const [phone, setPhone] = useState();
   const [flightNumber, setflight] = useState();
+  const [buttonText, setButtonText] = useState('I want Notification'); // button state
 
   //validator
   const validateEmail = (email) => {
@@ -33,6 +34,9 @@ const Notification = () => {
     if (form.checkValidity() === false) {
       event.stopPropagation();
     } else {
+
+      setButtonText('Fetching Please Wait...'); // Update button text
+
       // Create an object with user data
       const userData = {
         name,
@@ -136,8 +140,8 @@ const Notification = () => {
               </Form.Control.Feedback> */}
             </Form.Floating>
 
-            <Button variant="primary" type="submit">
-              I want Notification
+            <Button variant="primary" type="submit" disabled={buttonText === 'Fetching Please Wait...'}>
+              {buttonText}
             </Button>
           </Form>
         </div>

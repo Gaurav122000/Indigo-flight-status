@@ -67,6 +67,7 @@ const generateThankYouEmail = (name, flightNumber, flightData) =>
             </div>
             <div class="content">
                     <h1 style="text-align: center;">Your flight (${flightNumber}) status is = ${flightData.data[0].flight_status}</h1>
+                    <h3 style="text-align: center;">From ${flightData.data[0].departure.airport} To ${flightData.data[0].arrival.airport}</h3>
                     <p style="text-align: center;">Thank for choosing us, This is a confirmation mail that we got your flight information and we will keep you posted about your flight status.</p>
                     <p style="text-align: center;">Thank you, have a safe journey</p>
             </div>
