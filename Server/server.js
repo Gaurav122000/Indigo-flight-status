@@ -13,12 +13,19 @@ let PORT = process.env.PORT;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// for mongoDB local compass
-mongoose.connect("mongodb://127.0.0.1:27017/flight_status_DB").then(() => {
+const db = process.env.atlas_db;
+mongoose.connect(db).then(() => {
     console.log('Connected to DB ..... :)');
 }).catch((err) => {
     console.log(err, 'Not Connected to DB ...... :(');
 });
+
+// for mongoDB local compass
+// mongoose.connect("mongodb://127.0.0.1:27017/flight_status_DB").then(() => {
+//     console.log('Connected to DB ..... :)');
+// }).catch((err) => {
+//     console.log(err, 'Not Connected to DB ...... :(');
+// });
 
 const app = express();
 app.use(express.json());

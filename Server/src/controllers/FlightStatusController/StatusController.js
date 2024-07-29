@@ -15,6 +15,7 @@ const getFlightDetailsByNumber = async (flightNumber) => {
         throw error;
     }
 };
+//----------------------------------------------------------------------------------------------------------------
 
 // Controller function to handle the request
 export const trackFlight = async (req, res) => {
@@ -27,3 +28,6 @@ export const trackFlight = async (req, res) => {
         res.status(500).send('Error retrieving flight data');
     }
 };
+//----------------------------------------------------------------------------------------------------------------
+
+// updated notificationSave function

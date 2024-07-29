@@ -3,9 +3,9 @@ import { trackFlight } from "../controllers/FlightStatusController/StatusControl
 import { notificationSave } from "../controllers/NotificationController/NotificationController.js";
 const router = express.Router();
 
-//eg -- 
-//router.get('/', userController.getLandingPage)
+//for tracking the flight status 
 router.post('/track-flight', trackFlight);
+//for sending confirmation notification
 router.post('/notification-flight', notificationSave);
 
 export default router;
