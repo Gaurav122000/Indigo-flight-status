@@ -1,23 +1,23 @@
 .hero{
-    margin: 0px 120px;
-    margin-top: 270px;
+    margin: 0% 8%;
+    margin-top: 15%;
 }
 
 .hero-text{
     color: #FFF;
-    font-size: 110px;
+    font-size: 3.5rem;
     font-weight: 500;
-    line-height: 130px;
+    line-height: 5rem;
 }
 
 .hero-explore{
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 5rem;
     width: fit-content;
-    margin-top: 70px;
+    margin-top: 5rem;
     padding: 5px 8px;
-    padding-left: 30px;
+    padding-left: 1rem;
     border-radius: 60px;
     background-color: white;
     cursor: pointer;
@@ -25,7 +25,7 @@
 
 .hero-p{
     color: #292929;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 0rem;
     text-decoration: none;
@@ -35,7 +35,7 @@
 .hero-p:hover{color: #000099;}
 
 .hero-dot-play{
-    margin-top: 120px;
+    margin-top: 8rem;
     display: flex;
     justify-content: space-between;
 }
@@ -43,7 +43,7 @@
 .hero-dots{
     display: flex;
     align-items: center;
-    gap: 23px;
+    gap: 1rem;
     list-style: none;
 }
 
@@ -62,11 +62,11 @@
 .hero-play{
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 1.5rem;
 }
 
 .hero-play p{
     color: #FFF;
-    font-size: 19px;
+    font-size: 1.2rem;
     margin-bottom: 0rem;
 }

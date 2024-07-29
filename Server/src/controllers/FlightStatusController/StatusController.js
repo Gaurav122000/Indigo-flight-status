@@ -3,7 +3,7 @@ import notificationModel from '../../models/notification.model.js';
 import sendMail from '../EmailControllers/notification.confirm.controller.js'
 
 // Configuration
-const apiKey = '78c06db5c4405697c9b97ec7e8da7de3';
+const apiKey = "78c06db5c4405697c9b97ec7e8da7de3";
 const baseUrl = 'http://api.aviationstack.com/v1/';
 
 // Function to get flight details by flight number
@@ -49,7 +49,7 @@ export const notificationSave = async (req, res) => {
         sendMail(notification, flightData);
 
         // Respond with the notification and flight data
-        res.json(notification);
+        res.json({notification, flightData});
 
     }catch(err){
         console.error('Error creating notification or retrieving flight data:', err);

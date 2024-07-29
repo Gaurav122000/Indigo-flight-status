@@ -1,5 +1,4 @@
 import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
 import generateThankYouEmail from '../../views/notification.confirm.templates.js';
 
 export default async function sendMail({name, email, flightNumber}, flightData){

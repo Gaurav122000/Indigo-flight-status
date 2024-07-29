@@ -45,12 +45,11 @@ const Notification = () => {
         // Send the data to your backend (provide the full URL)
         const response = await axios.post("http://127.0.0.1:3200/notification-flight", userData);
   
-        // Handle the successful response (e.g., show an alert)
-        if (response.status === 200) {
-            console.log(response);
-          alert("Data submitted successfully!");
-          // You can also reset the form fields here if needed
-        }
+        const { notification, flightData } = response.data;
+          // Extract the flight status
+          const flightStatus = flightData?.data[0]?.flight_status || 'Unknown';
+          alert(`Data submitted successfully!, Flight Status: ${flightStatus}`);
+          window.location.href = '/';
       } catch (error) {
         console.error("Error submitting data:", error);
         // Handle any errors (e.g., show an error message)

@@ -1,16 +1,20 @@
 .background{
     height: 100%;
     width: 100%;
-    float: left;
     top:  0;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: none;
+    padding: 0;
     position: fixed;
     object-fit: cover;
     z-index: -1;
 }
+
+.background {
+    background-position: center center;
+}
+
 
 @keyframes fadeIn {
     from {opacity: 0;}

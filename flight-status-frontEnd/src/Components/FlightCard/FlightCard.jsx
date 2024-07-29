@@ -30,8 +30,8 @@ const FlightCard = ({ flight }) => {
                     <strong>Airport: </strong> {flight.arrival.airport}<br/>
                     <strong>Scheduled Arrival: </strong> {flight.arrival.scheduled}<br />
                     <strong>Actual Arrival:</strong> {flight.arrival.actual}<br />
-                    <strong>Arrival Terminal:</strong> {flight.arrival.terminal}<br/>
-                    <strong>Arrival Gate:</strong> {flight.arrival.gate}<br />
+                    <strong>Terminal:</strong> {flight.arrival.terminal}<br/>
+                    <strong>Gate:</strong> {flight.arrival.gate}<br />
                     <strong>Delay in arrival: </strong>
                     <span style={{ color: 'red', fontWeight: 'bold' }}>
                         {flight.arrival.delay}
