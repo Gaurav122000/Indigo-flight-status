@@ -1,6 +1,5 @@
 import express from "express";
 import { trackFlight, notificationSave } from "../controllers/FlightStatusController/StatusController.js";
-//import { notificationSave } from "../controllers/NotificationController/NotificationController.js";
 const router = express.Router();
 
 //for tracking the flight status 

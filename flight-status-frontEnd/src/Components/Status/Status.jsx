@@ -10,15 +10,23 @@ import FlightCard from '../FlightCard/FlightCard.jsx';
 const Status = () => {
     const [flightNumber, setFlightNumber] = useState('');
     const [flightStatus, setFlightStatus] = useState(null);
+    const [buttonText, setButtonText] = useState('Track flight');
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false); // button disabled state
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setButtonText('Fetching...');
+        setIsButtonDisabled(true);
         axios.post('http://localhost:3200/track-flight', { flightNumber })
             .then(response => {
                 setFlightStatus(response.data.data[0]);
+                setButtonText('Track flight');
+                setIsButtonDisabled(false);
                 console.log(response);
             })
             .catch(error => {
+                setButtonText('Track flight');
+                setIsButtonDisabled(false);
                 console.error('There was an error!', error);
             });
     };
@@ -46,7 +54,7 @@ const Status = () => {
                         </Form.Control.Feedback>
                     </Form.Floating>
     
-                    <Button variant="primary" type="submit">Track Flight</Button>
+                    <Button variant="primary" type="submit" disabled={isButtonDisabled}>{buttonText}</Button>
                 </Form>
                 {flightStatus && (
                     <FlightCard flight={flightStatus} />

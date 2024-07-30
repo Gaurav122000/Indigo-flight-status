@@ -14,7 +14,7 @@ export default async function sendMail({name, email, flightNumber}, flightData){
     let mailOptions = {
         from:'Gaurav@flightconpanion.co',
         to: email,
-        subject: `You are Onboard ${name}, I'm your companion for this journey`,
+        subject: `Hey ${name}, I'm your flight companion`,
         html: generateThankYouEmail(name, flightNumber, flightData),
     };
 

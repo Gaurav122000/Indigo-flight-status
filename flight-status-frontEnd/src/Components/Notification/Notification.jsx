@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
+import FloatingLabel from 'react-bootstrap/esm/FloatingLabel';
 import Button from "react-bootstrap/Button";
 import Navbar from "../Navbar/Navbar";
 import image1 from "../../assets/image1.jpg";
@@ -10,8 +11,8 @@ const Notification = () => {
   //useStates for getting the data
   const [name, setName] = useState();
   const [email, setEmail] = useState();
-  const [phone, setPhone] = useState();
   const [flightNumber, setflight] = useState();
+  const [choice, setChoice] = useState();
   const [buttonText, setButtonText] = useState('I want Notification'); // button state
 
   //validator
@@ -21,16 +22,11 @@ const Notification = () => {
     return re.test(String(email).toLowerCase());
   };
 
-  const validatePhoneNumber = (phone) => {
-    var re = /^\d{10}$/;
-    return re.test(phone);
-  };
-
   //handle submit controlling the submition
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
-  
+
     if (form.checkValidity() === false) {
       event.stopPropagation();
     } else {
@@ -41,28 +37,37 @@ const Notification = () => {
       const userData = {
         name,
         email,
-        phone,
         flightNumber,
+        choice,
       };
-  
+
       try {
         // Send the data to your backend (provide the full URL)
         const response = await axios.post("http://127.0.0.1:3200/notification-flight", userData);
-  
-        const { notification, flightData } = response.data;
-          // Extract the flight status
-          const flightStatus = flightData?.data[0]?.flight_status || 'Unknown';
-          alert(`Data submitted successfully!, Flight Status: ${flightStatus}`);
-          window.location.href = '/';
+
+        const { message, notification, flightData } = response.data;
+
+            if (message === 'Your flight has already landed.') {
+                alert('Your flight has already landed.');
+            } else if (message === 'You already have an active flight scheduler.') {
+                alert('You already have an active flight scheduler.');
+            } else {
+                // Extract the flight status
+                const flightStatus = flightData?.data[0]?.flight_status || 'Unknown';
+                alert(`Data submitted successfully! Flight Status: ${flightStatus}`);
+            }
+
+        window.location.href = '/';
       } catch (error) {
         console.error("Error submitting data:", error);
-        // Handle any errors (e.g., show an error message)
+        alert("There was an error submitting your data. Please try again.");
+        window.location.href = '/Notification';
       }
     }
-  
+
     form.classList.add("was-validated");
   };
-  
+
   return (
     <>
       <Navbar />
@@ -108,23 +113,6 @@ const Notification = () => {
 
             <Form.Floating>
               <Form.Control
-                id="phone"
-                type="number"
-                placeholder=""
-                size="lg"
-                name="phone"
-                onChange={(e) => setPhone(e.target.value)}
-                required
-                isValid={phone && validatePhoneNumber(phone)}
-              />
-              <label htmlFor="phone">Mobile Number</label>
-              <Form.Control.Feedback type="invalid">
-                Please provide a valid mobile number.
-              </Form.Control.Feedback>
-            </Form.Floating>
-
-            <Form.Floating>
-              <Form.Control
                 id="flightNumber"
                 type="text"
                 placeholder=""
@@ -132,13 +120,21 @@ const Notification = () => {
                 name="flightNumber"
                 onChange={(e) => setflight(e.target.value)}
                 required
-                // isValid={phone && validatePhoneNumber(phone)}
+              // isValid={phone && validatePhoneNumber(phone)}
               />
               <label htmlFor="flightNumber">Flight Number</label>
               {/* <Form.Control.Feedback type="invalid">
                 Please provide a valid mobile number.
               </Form.Control.Feedback> */}
             </Form.Floating>
+
+            <FloatingLabel controlId="floatingSelect" label="Please Select The Notification Frequency">
+              <Form.Select name='choice' onChange={(e) => setChoice(e.target.value)} id='choice' aria-label="choice">
+                <option value="Choose one">Choose one</option>
+                <option value="false">One time only</option>
+                <option value="true">Throughtout the Flight</option>
+              </Form.Select>
+            </FloatingLabel>
 
             <Button variant="primary" type="submit" disabled={buttonText === 'Fetching Please Wait...'}>
               {buttonText}

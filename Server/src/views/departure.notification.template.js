@@ -1,4 +1,4 @@
-const generateThankYouEmail = (name, flightNumber, flightData) => 
+const generateThankYouEmail3 = (name, flightNumber, flightData) => 
     `
     <!DOCTYPE html>
     <html>
@@ -68,9 +68,9 @@ const generateThankYouEmail = (name, flightNumber, flightData) =>
             <div class="content">
                     <h1 style="text-align: center;">Your flight (${flightNumber}) status is = ${flightData.data[0].flight_status}</h1>
                     <h3 style="text-align: center;">From ${flightData.data[0].departure.airport} To ${flightData.data[0].arrival.airport}</h3>
-                    <h3 style="text-align: center;">Departure: ${flightData.data[0].departure.scheduled}, Arrival: ${flightData.data[0].arrival.scheduled}</h3>
-                    <p style="text-align: center;">Thank you for choosing us, Here is the current status of your flight.</p>
-                    <p style="text-align: center;">Thank you and have a safe journey!</p>
+                    <h3 style="text-align: center;">your Flight Departure at: ${flightData.data[0].departure.scheduled} with Delay: ${flightData.data[0].departure.delay} min</h3>
+                    <p style="text-align: center;">Thank for choosing us, This is your departure update email</p>
+                    <p style="text-align: center;">Thank you, have a safe journey!.... >->- </p>
             </div>
             <div class="footer">
                 <p>Best Regards,</p>
@@ -81,4 +81,4 @@ const generateThankYouEmail = (name, flightNumber, flightData) =>
 
 </html>`;
 
-export default generateThankYouEmail;
+export default generateThankYouEmail3;

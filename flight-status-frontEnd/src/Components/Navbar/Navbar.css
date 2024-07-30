@@ -1,4 +1,6 @@
-.nav{
+/* Navbar.css */
+
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,22 +8,22 @@
     color: white;
 }
 
-.nav-logo{
+.nav-logo {
     font-family: Outfit;
     margin-top: -1rem;
     font-size: 2rem;
     font-weight: 400;
 }
 
-.nav-menu{
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
-    font-size: 1remx;
+    font-size: 1rem;
     gap: 7rem;
 }
 
-.nav-contact{
+.nav-contact {
     text-decoration: none;
     border-radius: 50px;
     padding: 10px 38px;
@@ -29,13 +31,50 @@
     color: #262626;
 }
 
-.link-sty{
+.link-sty {
     text-decoration: none;
-    color: #FFF; /* Match the color with the logo */
-    font-family: Outfit; /* Match the font with the logo */
-    font-size: 1rem; /* Match the font size with the menu items */
+    color: #fff;
+    font-family: Outfit; 
+    font-size: 1rem;
 }
 
 .nav-menu a:hover {
-    color: #000099; /* Optional: Slightly darker color on hover */
+    color: #000099; 
+}
+
+/* Style for the burger icon */
+.burger-icon {
+    display: none; /* Hide the icon by default on larger screens */
+    cursor: pointer;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 1100px) {
+    .burger-icon {
+        display: block;
+    }
+    .nav-menu {
+        display: none;
+    }
+    .nav-logo {
+        margin-top: -0.1rem;
+    }
+    /* Style the menu items when the burger icon is active */
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 8%; 
+        right: 0;
+        width: 25%;
+        padding: 1rem;
+        z-index: 1;
+    }
+    .nav-menu.active a {
+        color: #000099;
+        text-decoration: none;
+        margin-bottom: 1rem;
+}
 }

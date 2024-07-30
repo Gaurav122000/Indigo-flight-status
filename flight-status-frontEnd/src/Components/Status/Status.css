@@ -1,19 +1,10 @@
-/* Scoped styles for Status component */
-/* In your global CSS (e.g., index.css or App.css) */
-/* html, body {
-    overflow: hidden;
-} */
-
 .status-body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     margin: 0;
-    background-image: url('../../assets/image1.jpg'); /* Ensure the correct path */
     background-size: cover;
     background-position: center;
-    /* overflow-x: hidden; */
 }
 
 .Sta-form {
