@@ -19,7 +19,11 @@ Like these...
 Now, Working...........
 For status, I take the Flight number from the user and pass it to my node Api where I run the query on 3rd third-party database to fetch the current data, once I receive the data from the 3rd party Api then I need to clean the data and send back as a response in my front-end. where I further filter the data and arrange it then show it to the user. At every stage of my Apis, I tried to handle every possible error and exception that I could think of this step. 
 
-For Notification, I take a few details from the user and then pass these details to my backend where first I store them in my database and then filter the flight number from the monogoDB return object then pass that flight Number to my getFlightDetailsByNumber function with fetch me the details from the 3rd party database, then pass those information to my nodemailer api sendmail which takes the user data from mongoDB return data then fill these data in the html template and send the email to the user.
+For Notification, I take a few details from the user and then pass these details to my backend where first I store them in my database and then filter the flight number from the monogoDB return object then pass that flight Number to my getFlightDetailsByNumber function which fetches me the details from the 3rd party database, then pass that information to my nodemailer API(sendmail) which takes the user data from mongoDB return data then fill these data in the html template and send the email to the user and also send a response back to front-end where I show the flight-status to the user in the form of alert box.
+
+I have also implemented form validation to validate the user input.
+
+and some more minor functionality to improve the site's overall experience once I fill out the notification form then the button text changes from "I want notification" to "fetching please wait...." and also I disable the button until I get a response from the backend, once I get a response than I showcase the flight_status in the alert box.
 
 Some Screen Shots of the Project...
 
@@ -36,4 +40,8 @@ Some Screen Shots of the Project...
 ![Screenshot 2024-07-30 204202](https://github.com/user-attachments/assets/c6b7f1b0-525e-4c43-b224-10e8d09f13ef)
 
 ![Screenshot 2024-07-30 230500](https://github.com/user-attachments/assets/f42573c4-93e2-4b7d-98a7-571b81244344)
+
+![Screenshot 2024-07-31 083039](https://github.com/user-attachments/assets/3de1d34f-a261-4450-8db5-9d7c360cae22)
+
+![Screenshot 2024-07-31 083333](https://github.com/user-attachments/assets/7e798c1d-539c-4f86-9578-51f85296ea5d)
 
