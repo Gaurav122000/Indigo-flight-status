@@ -1,5 +1,5 @@
 # Flight Companion - A flight Status and live Notification web App
-In the case study, I created a web app using react.js, node.js, express.js, MongoDB, AviationStack for flight data, and AWS S3 bucket for development. 
+In the case study, I created a web app using react.js, node.js, express.js, MongoDB, AviationStack for flight data, and AWS S3 bucket for Storage. 
 
 For a video demo of the project click the link ....
 https://goodwill-ngo.s3.ap-south-1.amazonaws.com/flight-status/flight-site-video.mp4
@@ -11,7 +11,7 @@ In the database, I have used MongoDB Atlas which is a cloud-based non-relational
 
 I have used AWS S3 to store a few images and videos that I want to access quickly and easily.
 
-I have also created custom Email templates with the help of plane HTMl and Internal CSS then Passed these templates as a response to the user for notification purposes. and these email templates consist of live dynamic data of flight schedules, airport names, departure/Arrival times and delays, etc... 
+I have also created custom Email templates with the help of plane HTMl and Internal CSS then Passed these templates as a response to the user for notification purposes. These email templates consist of live dynamic data on flight schedules, airport names, departure/arrival times delays, etc. 
 Like these...
 
 ![Screenshot 2024-07-30 220603](https://github.com/user-attachments/assets/be2b9e90-1a3a-49d4-9c48-a37c84ca0a67)
@@ -19,11 +19,11 @@ Like these...
 Now, Working...........
 For status, I take the Flight number from the user and pass it to my node Api where I run the query on 3rd third-party database to fetch the current data, once I receive the data from the 3rd party Api then I need to clean the data and send back as a response in my front-end. where I further filter the data and arrange it then show it to the user. At every stage of my Apis, I tried to handle every possible error and exception that I could think of this step. 
 
-For Notification, I take a few details from the user and then pass these details to my backend where first I store them in my database and then filter the flight number from the monogoDB return object then pass that flight Number to my getFlightDetailsByNumber function which fetches me the details from the 3rd party database, then pass that information to my nodemailer API(sendmail) which takes the user data from mongoDB return data then fill these data in the html template and send the email to the user and also send a response back to front-end where I show the flight-status to the user in the form of alert box.
+For Notification, I take a few details from the user and then pass these details to my backend where first I store them in my database and then filter the flight number from the monogoDB return object then pass that flight Number to my getFlightDetailsByNumber function which fetches me the details from the 3rd party database, then pass that information to my nodeMailer API(sendmail) which takes the user data from mongoDB return data then fill these data in the html template and send the email to the user and also send a response back to front-end where I show the flight-status to the user in the form of alert box.
 
 I have also implemented form validation to validate the user input.
 
-and some more minor functionality to improve the site's overall experience once I fill out the notification form then the button text changes from "I want notification" to "fetching please wait...." and also I disable the button until I get a response from the backend, once I get a response than I showcase the flight_status in the alert box.
+and some more minor functionality to improve the site's overall experience once I fill out the notification form then the button text changes from "I want notification" to "fetching please wait...." and I also disable the button until I get a response from the backend, once I get a response than I showcase the flight_status in the alert box.
 
 Some Screen Shots of the Project...
 
